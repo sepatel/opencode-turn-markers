@@ -10,11 +10,27 @@
 // from the sessions' message lists and tags each row data-turn-parity="even" | "odd" for the rail color.
 ;(function () {
   var css = [
-    // Question bubble: purple tint with an accent stripe. Queued (pending) messages keep the app's muted look.
+    // Question bubble: a fixed 70% of the column (the app shrinks it to its text), still right-aligned.
+    ':root[data-color-scheme="dark"] [data-component="user-message"] [data-slot="user-message-body"] {',
+    '  width: 70% !important;',
+    '  max-width: none !important;',
+    '}',
+    ':root[data-color-scheme="dark"] [data-component="user-message"] [data-slot="user-message-text"] {',
+    '  display: block !important;',
+    '  width: 100% !important;',
+    '  box-sizing: border-box !important;',
+    '}',
+
+    // Tint and right-edge stripe follow the exchange's rail color. Queued (pending) messages keep the app's muted look.
     ':root[data-color-scheme="dark"] [data-component="user-message"]:not([data-pending]) [data-slot="user-message-text"] {',
     '  --user-message-bubble: #221a30 !important;',
     '  background: #221a30 !important;',
-    '  box-shadow: inset 3px 0 0 #9d7cd8 !important;',
+    '  box-shadow: inset -3px 0 0 #9d7cd8 !important;',
+    '}',
+    ':root[data-color-scheme="dark"] [data-turn-parity="odd"] [data-component="user-message"]:not([data-pending]) [data-slot="user-message-text"] {',
+    '  --user-message-bubble: #2a1f17 !important;',
+    '  background: #2a1f17 !important;',
+    '  box-shadow: inset -3px 0 0 #fab283 !important;',
     '}',
 
     // Rail down the left of every row in an exchange; rows are contiguous, so it reads as one line.
