@@ -133,13 +133,16 @@ function ColorInput(props: { label: string; value: string; onInput: (value: stri
           background: isColor(props.value) ? props.value : "transparent",
         }}
       />
-      <ui.TextInput
-        label={props.label}
-        value={props.value}
-        onInput={props.onInput}
-        invalid={!isColor(props.value)}
-        placeholder="#9d7cd8"
-      />
+      {/* Settings rows stretch inputs to their container, so this sets the input's width. */}
+      <div style={{ width: "120px" }}>
+        <ui.TextInput
+          label={props.label}
+          value={props.value}
+          onInput={props.onInput}
+          invalid={!isColor(props.value)}
+          placeholder="#9d7cd8"
+        />
+      </div>
     </div>
   )
 }

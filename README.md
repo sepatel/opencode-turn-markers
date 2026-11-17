@@ -9,6 +9,15 @@ each exchange in the OpenCode Desktop timeline:
 
 Everything is adjustable in **Settings → Turn markers**.
 
+![A session with turn markers: an orange line ends one exchange, and a purple line and stripe start the next question](assets/after.png)
+
+<details>
+<summary>The same session without the plugin</summary>
+
+![The same session in plain OpenCode Desktop, where questions and answers run together](assets/before.png)
+
+</details>
+
 ## Install
 
 ```sh
@@ -18,7 +27,19 @@ opencode plugin add github:sepatel/opencode-turn-markers
 Then fully quit OpenCode Desktop and reopen it. The plugin shows up under **Settings → Extensions → Plugins**, and its
 settings page under **Settings → Turn markers**.
 
+## Update
+
+OpenCode checks for new versions but doesn't install them on its own. To get the latest:
+
+```sh
+opencode plugin update github:sepatel/opencode-turn-markers
+```
+
+Then fully quit and reopen the Desktop app.
+
 ## Settings
+
+![The Turn markers settings page](assets/config.png)
 
 | Setting | Default | What it does |
 | --- | --- | --- |
@@ -33,6 +54,10 @@ settings page under **Settings → Turn markers**.
 | Strength | Normal | How visible the side line is |
 
 **Reset to defaults** at the top of the page puts everything back.
+
+The default colours come from [opencode-cli-theme](https://github.com/Mehdi-afs/opencode-cli-theme), which brings the
+OpenCode CLI's palette to the Desktop app, so the two look right together. The screenshots above use the app's default
+theme.
 
 ## Troubleshooting
 
