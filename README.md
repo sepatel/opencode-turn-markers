@@ -27,6 +27,16 @@ opencode plugin add github:sepatel/opencode-turn-markers
 Then fully quit OpenCode Desktop and reopen it. The plugin shows up under **Settings → Extensions → Plugins**, and its
 settings page under **Settings → Turn markers**.
 
+## Update
+
+OpenCode checks for new versions but doesn't install them on its own. To get the latest:
+
+```sh
+opencode plugin update github:sepatel/opencode-turn-markers
+```
+
+Then fully quit and reopen the Desktop app.
+
 ## Settings
 
 ![The Turn markers settings page](assets/config.png)
