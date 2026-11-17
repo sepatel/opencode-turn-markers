@@ -22,7 +22,7 @@ settings page under **Settings → Turn markers**.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| Apply in | Dark mode only | Dark mode, light mode, or both |
+| Apply in | Dark and light mode | Dark mode, light mode, or both |
 | Color | `#9d7cd8` | Any CSS colour |
 | Alternate colors | On | Use a second colour on every other exchange |
 | Second color | `#fab283` | The colour for every other exchange |
@@ -39,8 +39,8 @@ settings page under **Settings → Turn markers**.
 - **The markers disappear after an OpenCode update.** Fully quit and reopen the app once. If they're still missing, the
   app may have changed the internal names this plugin styles; please
   [open an issue](https://github.com/sepatel/opencode-turn-markers/issues) with your app version.
-- **Colours don't alternate.** Run **Diagnose turn markers** from the command palette and include its output in an
-  issue.
+- **Colours don't alternate.** Open the command palette (**Ctrl+K**, or **Cmd+K** on macOS), run **Diagnose turn
+  markers**, and include its output in an issue.
 - **To turn it off,** use the switch in **Settings → Extensions → Plugins**, or run
   `opencode plugin remove opencode-turn-markers`.
 

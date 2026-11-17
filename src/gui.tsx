@@ -45,7 +45,8 @@ export default Plugin.define({
         ctx.toast.show({
           title: ctx.t("diag.toast"),
           description: [
-            `version: ${ctx.app.version}`,
+            `plugin: ${ctx.id}`,
+            `app version: ${ctx.app.version}`,
             `scheme: ${document.documentElement.getAttribute("data-color-scheme")} (applies in: ${current.mode})`,
             `colors: ${palette(current).join(", ")}`,
             `timeline rows: ${stats.rows}, tagged: ${stats.tagged}, sessions read: ${stats.sessions}`,

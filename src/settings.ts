@@ -18,7 +18,7 @@ export interface Settings {
 }
 
 export const defaults: Settings = {
-  mode: "dark",
+  mode: "both",
   colors: ["#9d7cd8", "#fab283"],
   alternate: true,
   width: "70%",
