@@ -67,8 +67,11 @@ each rebuild reloads the plugin in every window.
 }
 ```
 
-`dist/gui-experimental.cjs` is committed, because installing from GitHub doesn't run a build. Run `bun run build` and
+`dist/gui-experimental.cjs` is committed, because installing from GitHub doesn't run a build. Run `bun run bundle` and
 commit the result with every change. `bun run typecheck` checks the types.
+
+Keep the package free of runtime dependencies, and don't add `build`, `prepare`, `prepack` or `install` scripts. Any of
+those makes npm prepare the Git checkout on install, which `opencode plugin add` can't do.
 
 ## License
 
