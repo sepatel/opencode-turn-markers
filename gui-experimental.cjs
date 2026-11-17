@@ -23,13 +23,13 @@
 
     // Tint and right-edge stripe follow the exchange's rail color. Queued (pending) messages keep the app's muted look.
     ':root[data-color-scheme="dark"] [data-component="user-message"]:not([data-pending]) [data-slot="user-message-text"] {',
-    '  --user-message-bubble: #221a30 !important;',
-    '  background: #221a30 !important;',
+    '  --user-message-bubble: #1c1922 !important;',
+    '  background: #1c1922 !important;',
     '  box-shadow: inset -3px 0 0 #9d7cd8 !important;',
     '}',
     ':root[data-color-scheme="dark"] [data-turn-parity="odd"] [data-component="user-message"]:not([data-pending]) [data-slot="user-message-text"] {',
-    '  --user-message-bubble: #2a1f17 !important;',
-    '  background: #2a1f17 !important;',
+    '  --user-message-bubble: #1f1b18 !important;',
+    '  background: #1f1b18 !important;',
     '  box-shadow: inset -3px 0 0 #fab283 !important;',
     '}',
 
