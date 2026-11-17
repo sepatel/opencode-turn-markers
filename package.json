@@ -1,4 +1,39 @@
 {
-  "name": "turn-markers",
-  "version": "0.1.0"
+  "name": "opencode-turn-markers",
+  "version": "0.1.0",
+  "description": "OpenCode Desktop plugin that marks where each question starts and how far its answer runs in the session timeline.",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-desktop"
+  ],
+  "license": "MIT",
+  "author": "Sejal Patel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepatel/opencode-turn-markers.git"
+  },
+  "homepage": "https://github.com/sepatel/opencode-turn-markers#readme",
+  "bugs": "https://github.com/sepatel/opencode-turn-markers/issues",
+  "type": "module",
+  "exports": {
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.3.0"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.19",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vite-plugin-solid": "^2.11.16"
+  }
 }
