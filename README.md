@@ -50,6 +50,8 @@ Then fully quit and reopen the Desktop app.
 | Width | 70% | Question bubble width, from the app default (fit to text) to full width |
 | Accent stripe | Right edge | Right edge, left edge, or none |
 | Background tint | Subtle | How much of the exchange colour shows in the bubble |
+| Question text | App default | Text colour of your sent messages |
+| Pending text | App default | Text colour of messages queued while the agent is still working |
 | Show side line | On | The line from each question to the end of its answer |
 | Strength | Normal | How visible the side line is |
 
@@ -73,6 +75,8 @@ theme.
 
 Tested with OpenCode Desktop 2.3.0 on Linux. It uses the Desktop's GUI plugin API, which OpenCode marks as
 experimental, and styles the timeline's internal markup, which can change between releases.
+
+It doesn't apply to the web interface opened with `opencode pair`, which doesn't load Desktop plugins.
 
 ## Development
 

@@ -90,6 +90,29 @@ export function SettingsView() {
         </ui.SettingsRow>
       </ui.SettingsSection>
 
+      <ui.SettingsSection title={ctx.t("section.text")}>
+        <ui.SettingsRow id="textColor" title={ctx.t("textColor.title")} description={ctx.t("textColor.description")}>
+          <ColorInput
+            label={ctx.t("textColor.title")}
+            value={store.value.textColor ?? ""}
+            onInput={(value) => set("textColor", value)}
+            placeholder={ctx.t("color.appDefault")}
+          />
+        </ui.SettingsRow>
+        <ui.SettingsRow
+          id="pendingTextColor"
+          title={ctx.t("pendingTextColor.title")}
+          description={ctx.t("pendingTextColor.description")}
+        >
+          <ColorInput
+            label={ctx.t("pendingTextColor.title")}
+            value={store.value.pendingTextColor ?? ""}
+            onInput={(value) => set("pendingTextColor", value)}
+            placeholder={ctx.t("color.appDefault")}
+          />
+        </ui.SettingsRow>
+      </ui.SettingsSection>
+
       <ui.SettingsSection title={ctx.t("section.rail")}>
         <ui.SettingsRow id="rail" title={ctx.t("rail.title")} description={ctx.t("rail.description")}>
           <ui.Switch
@@ -118,8 +141,15 @@ export function SettingsView() {
   )
 }
 
-function ColorInput(props: { label: string; value: string; onInput: (value: string) => void }): JSX.Element {
+// With a placeholder the field is optional: empty means "use the app's color" and isn't flagged as invalid.
+function ColorInput(props: {
+  label: string
+  value: string
+  onInput: (value: string) => void
+  placeholder?: string
+}): JSX.Element {
   const ui = usePlugin<typeof definition>().ui
+  const empty = () => props.value.trim() === ""
   return (
     <div style={{ display: "flex", "align-items": "center", gap: "8px" }}>
       <span
@@ -129,7 +159,7 @@ function ColorInput(props: { label: string; value: string; onInput: (value: stri
           height: "20px",
           "border-radius": "4px",
           "flex-shrink": "0",
-          border: "1px solid var(--v2-border-border-base)",
+          border: `1px ${empty() ? "dashed" : "solid"} var(--v2-border-border-base)`,
           background: isColor(props.value) ? props.value : "transparent",
         }}
       />
@@ -139,8 +169,8 @@ function ColorInput(props: { label: string; value: string; onInput: (value: stri
           label={props.label}
           value={props.value}
           onInput={props.onInput}
-          invalid={!isColor(props.value)}
-          placeholder="#9d7cd8"
+          invalid={!(isColor(props.value) || (empty() && props.placeholder !== undefined))}
+          placeholder={props.placeholder ?? "#9d7cd8"}
         />
       </div>
     </div>

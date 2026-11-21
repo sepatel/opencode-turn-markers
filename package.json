@@ -1,6 +1,6 @@
 {
   "name": "opencode-turn-markers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "OpenCode Desktop plugin that marks where each question starts and how far its answer runs in the session timeline.",
   "keywords": [
     "opencode",

@@ -49,5 +49,16 @@ export function buildCss(settings: Settings): string {
     }
   })
 
+  if (settings.textColor) {
+    rules.push(
+      `${scope} [data-component="user-message"]:not([data-pending]) [data-slot="user-message-text"] { color: ${settings.textColor} !important; }`,
+    )
+  }
+  if (settings.pendingTextColor) {
+    rules.push(
+      `${scope} [data-component="user-message"][data-pending] [data-slot="user-message-text"] { color: ${settings.pendingTextColor} !important; }`,
+    )
+  }
+
   return rules.join("\n")
 }

@@ -29,9 +29,19 @@ export default Plugin.define({
         return ctx.t("title")
       },
       get entries() {
-        return ["mode", "primary", "alternate", "secondary", "width", "stripe", "tint", "rail", "railStrength"].map(
-          (id) => ({ id, title: ctx.t(`${id}.title`), description: ctx.t(`${id}.description`) }),
-        )
+        return [
+          "mode",
+          "primary",
+          "alternate",
+          "secondary",
+          "width",
+          "stripe",
+          "tint",
+          "textColor",
+          "pendingTextColor",
+          "rail",
+          "railStrength",
+        ].map((id) => ({ id, title: ctx.t(`${id}.title`), description: ctx.t(`${id}.description`) }))
       },
       render: () => <SettingsView />,
     })
