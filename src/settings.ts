@@ -15,6 +15,9 @@ export interface Settings {
   tint: (typeof tints)[number]
   rail: boolean
   railStrength: (typeof strengths)[number]
+  // Undefined keeps the app's own text color.
+  textColor?: string
+  pendingTextColor?: string
 }
 
 export const defaults: Settings = {
@@ -40,6 +43,8 @@ export const StoredSettings = Schema.Struct({
   tint: Schema.optional(Schema.String),
   rail: Schema.optional(Schema.Boolean),
   railStrength: Schema.optional(Schema.String),
+  textColor: Schema.optional(Schema.String),
+  pendingTextColor: Schema.optional(Schema.String),
 })
 
 export type Stored = typeof StoredSettings.Type
@@ -65,6 +70,8 @@ export function normalize(stored: Stored): Settings {
     tint: pick(tints, stored.tint, defaults.tint),
     rail: stored.rail ?? defaults.rail,
     railStrength: pick(strengths, stored.railStrength, defaults.railStrength),
+    textColor: isColor(stored.textColor) ? stored.textColor : undefined,
+    pendingTextColor: isColor(stored.pendingTextColor) ? stored.pendingTextColor : undefined,
   }
 }
 

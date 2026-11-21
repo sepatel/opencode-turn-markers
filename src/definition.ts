@@ -13,6 +13,7 @@ export const definition = Plugin.define({
 
       "section.appearance": "Appearance",
       "section.question": "Question",
+      "section.text": "Text",
       "section.rail": "Side line",
 
       "mode.title": "Apply in",
@@ -45,6 +46,13 @@ export const definition = Plugin.define({
       "tint.subtle": "Subtle",
       "tint.medium": "Medium",
       "tint.strong": "Strong",
+
+      "color.appDefault": "App default",
+      "textColor.title": "Question text",
+      "textColor.description": "Text color of your sent messages. Leave empty for the app's default.",
+      "pendingTextColor.title": "Pending text",
+      "pendingTextColor.description":
+        "Text color of messages queued while the agent is still working. Leave empty for the app's default.",
 
       "rail.title": "Show side line",
       "rail.description": "A line down the left edge from each question to the end of its answer.",
