@@ -9,12 +9,12 @@ each exchange in the OpenCode Desktop timeline:
 
 Everything is adjustable in **Settings → Turn markers**.
 
-![A session with turn markers: an orange line ends one exchange, and a purple line and stripe start the next question](assets/after.png)
+![A session with turn markers: an orange line ends one exchange, and a purple line and stripe start the next question](https://raw.githubusercontent.com/sepatel/opencode-turn-markers/main/assets/after.png)
 
 <details>
 <summary>The same session without the plugin</summary>
 
-![The same session in plain OpenCode Desktop, where questions and answers run together](assets/before.png)
+![The same session in plain OpenCode Desktop, where questions and answers run together](https://raw.githubusercontent.com/sepatel/opencode-turn-markers/main/assets/before.png)
 
 </details>
 
@@ -26,7 +26,7 @@ following the [OpenCode install guide](https://opencode.ai/docs/#cli) (on Window
 use the config method below.
 
 ```sh
-opencode plugin add github:sepatel/opencode-turn-markers
+opencode plugin add opencode-turn-markers
 ```
 
 Then fully quit OpenCode Desktop and reopen it. The plugin shows up under **Settings → Extensions → Plugins**, and its
@@ -40,7 +40,7 @@ Add the plugin to your global config, `~/.config/opencode/opencode.json` (on Win
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugins": ["github:sepatel/opencode-turn-markers"]
+  "plugins": ["opencode-turn-markers"]
 }
 ```
 
@@ -52,14 +52,15 @@ installs the plugin on startup.
 OpenCode checks for new versions but doesn't install them on its own. To get the latest:
 
 ```sh
-opencode plugin update github:sepatel/opencode-turn-markers
+opencode plugin update opencode-turn-markers
 ```
 
-Then fully quit and reopen the Desktop app.
+Then fully quit and reopen the Desktop app. If you installed from GitHub before the plugin was on npm, use
+`github:sepatel/opencode-turn-markers` in place of the package name.
 
 ## Settings
 
-![The Turn markers settings page](assets/config.png)
+![The Turn markers settings page](https://raw.githubusercontent.com/sepatel/opencode-turn-markers/main/assets/config.png)
 
 | Setting | Default | What it does |
 | --- | --- | --- |
@@ -124,4 +125,4 @@ those makes npm prepare the Git checkout on install, which `opencode plugin add`
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/sepatel/opencode-turn-markers/blob/main/LICENSE)
