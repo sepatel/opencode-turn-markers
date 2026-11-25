@@ -21,7 +21,9 @@ Everything is adjustable in **Settings → Turn markers**.
 ## Install
 
 Needs OpenCode Desktop 2.3 or newer. Check that the `opencode` command is 2.x too with `opencode --version`; the 1.x
-command is `opencode plugin <package>`, and it can't install Desktop plugins.
+command is `opencode plugin <package>`, and it can't install Desktop plugins. If yours is 1.x, install the 2.x command
+following the [OpenCode install guide](https://opencode.ai/docs/#cli) (on Windows, `npm install -g @opencode/cli`), or
+use the config method below.
 
 ```sh
 opencode plugin add github:sepatel/opencode-turn-markers
