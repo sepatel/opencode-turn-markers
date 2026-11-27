@@ -1,0 +1,43 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  # npm trusted publishing: npm trusts a short-lived token from GitHub instead of a stored secret.
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Check the release tag matches package.json
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Release tag $GITHUB_REF_NAME doesn't match package.json version $version"
+            exit 1
+          fi
+
+      - name: Check the committed bundle matches the source
+        run: |
+          bun install --frozen-lockfile
+          bun run typecheck
+          bun run bundle
+          git diff --exit-code -- dist
+
+      # Trusted publishing needs npm 11.5.1 or newer, which the Node release may not bundle yet.
+      - run: npm install -g npm@latest
+
+      - run: npm publish --access public
